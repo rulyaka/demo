@@ -29,6 +29,11 @@ public class LoginStepDefs {
     @When("I login as a sales manager")
     public void i_login_as_a_sales_manager() {
         System.out.println("Logging in as a sales manager");
+        String username = ConfigurationReader.get("salesmanager_username");
+        String password = ConfigurationReader.get("salesmanager_password");
+
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username, password);
     }
 
     @When("I login as a driver")
@@ -40,6 +45,13 @@ public class LoginStepDefs {
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
 
+    }
+
+    @When("I login as a store manager")
+    public void i_login_as_a_store_manager() {
+        System.out.println("Logging in as a store manager");
+        LoginPage loginPage = new LoginPage();
+        loginPage.login("storemanager87", "UserUser123");
     }
 
 }

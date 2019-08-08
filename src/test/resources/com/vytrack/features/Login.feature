@@ -5,20 +5,22 @@ Feature: Login
   when I enter valid login credentials
   I should be able to see the dashboard page
 
-  @smoke
+  @smoke @driver
   Scenario: Login as driver
     Given I am on the login page
     When I login as a driver
     Then I should be able to see the dashboard page
 
-  @smoke @wip
+  @smoke @sales
   Scenario: Login as a sales manager
     Given I am on the login page
     When I login as a sales manager
     Then I should be able to see the dashboard page
 
-  @vyt-222
+  @store
   Scenario: Login as a store manager
     Given I am on the login page
     When I login as a store manager
     Then I should be able to see the dashboard page
+
+

@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/com/vytrack/features/Login.feature",
         glue = "com/vytrack/step_definitions",
-        tags = "@wip or @smoke"
+        tags = "@payment or @checkout",
+        dryRun = true
 )
 public class CukesRunner {
 }
