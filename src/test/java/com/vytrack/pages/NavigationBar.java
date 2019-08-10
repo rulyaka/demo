@@ -54,6 +54,7 @@ public abstract class NavigationBar {
     }
 
     public void logOut(){
+        waitForUIOverlay();
         BrowserUtils.waitForClickability(userFullName, 5).click();
         BrowserUtils.waitForClickability(logOutLink, 5).click();
     }
