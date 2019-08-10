@@ -33,7 +33,7 @@ public class LoginStepDefs {
         String password = ConfigurationReader.get("salesmanager_password");
 
         LoginPage loginPage = new LoginPage();
-        loginPage.login(username, password);
+        loginPage.login(username, "asdpadfghdsfklhgdshfk(^(&(*(KHKHKJKK");
     }
 
     @When("I login as a driver")
@@ -53,5 +53,6 @@ public class LoginStepDefs {
         LoginPage loginPage = new LoginPage();
         loginPage.login("storemanager87", "UserUser123");
     }
+
 
 }

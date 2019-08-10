@@ -6,10 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = "html:target/default-cucumber-reports",
         features = "src/test/resources/com/vytrack/features/Login.feature",
         glue = "com/vytrack/step_definitions",
-        tags = "@payment or @checkout",
-        dryRun = true
+        tags = "@smoke",
+        dryRun = false
 )
 public class CukesRunner {
 }
