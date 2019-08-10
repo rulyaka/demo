@@ -44,6 +44,4 @@ public class LogoutStepDefs {
         Assert.assertEquals(expectedTitle, actual);
     }
 
-
-
 }
