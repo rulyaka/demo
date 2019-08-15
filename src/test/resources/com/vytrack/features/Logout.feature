@@ -1,4 +1,4 @@
-@logout
+@logout @smoke
 Feature: Log out feature
 
   Scenario: Driver
