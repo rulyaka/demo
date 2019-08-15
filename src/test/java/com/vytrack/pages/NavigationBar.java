@@ -47,7 +47,7 @@ public abstract class NavigationBar {
 
     }
 
-    public static void waitForUIOverlay(){
+    public void waitForUIOverlay(){
         WebDriverWait wait = new WebDriverWait(Driver.get(), 5);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.loader-mask.shown")));
 
