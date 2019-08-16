@@ -15,24 +15,6 @@ public class VehiclesPage extends NavigationBar {
 
     }
 
-    @FindBy(css = "div[class='page-size pull-right form-horizontal'] button[data-toggle='dropdown']")
-    public WebElement viewPerPage;
-
-    @FindBy(css = "a[title='Filters']")
-    public WebElement filters;
-
-    @FindBy(css = "a[title='Refresh']")
-    public WebElement refresh;
-
-    @FindBy(css = "a[title='Reset']")
-    public WebElement reset;
-
-    @FindBy(css = "a[title='Grid Settings']")
-    public WebElement gridSettings;
-
-    @FindBy(css = "table.table-bordered th")
-    public List<WebElement> gridHeaders;
-
     @FindBy(css = "input[type='number']")
     public WebElement pageCount;
 

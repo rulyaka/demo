@@ -13,4 +13,11 @@ public class ViewContactPage extends NavigationBar {
     @FindBy(css = "a.email")
     public WebElement email;
 
+    @FindBy(css = "ul.inline>li:first-of-type")
+    public WebElement createdAt;
+
+    @FindBy(css = "ul.inline-decorate>li:first-of-type>a:first-of-type")
+    public WebElement owner;
+
+
 }

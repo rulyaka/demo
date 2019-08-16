@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public abstract class NavigationBar {
 
     @FindBy(css = "#user-menu>a")
@@ -17,6 +19,27 @@ public abstract class NavigationBar {
 
     @FindBy(linkText = "Logout")
     public WebElement logOutLink;
+
+    @FindBy(css = "a[title='Filters']")
+    public WebElement filters;
+
+    @FindBy(css = "a[title='Refresh']")
+    public WebElement refresh;
+
+    @FindBy(css = "a[title='Reset']")
+    public WebElement reset;
+
+    @FindBy(css = "a[title='Grid Settings']")
+    public WebElement gridSettings;
+
+    @FindBy(css = "table.table-bordered th")
+    public List<WebElement> gridHeaders;
+
+    @FindBy(css = "div[class='page-size pull-right form-horizontal'] button[data-toggle='dropdown']")
+    public WebElement viewPerPageDropDown;
+
+    @FindBy(css = "a.dropdown-item")
+    public List<WebElement> viewPerPageOptions;
 
     public NavigationBar(){
         PageFactory.initElements(Driver.get(), this);
