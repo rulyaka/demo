@@ -5,7 +5,9 @@ import com.vytrack.utilities.BrowserUtils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CalendarEventsStepDefs {
@@ -28,6 +30,32 @@ public class CalendarEventsStepDefs {
         // getting actual from UI
         List<String> actualOptions = BrowserUtils.getElementsText(calendarEventsPage.viewPerPageOptions);
         Assert.assertEquals(expectedOptions, actualOptions);
+    }
+
+    @Then("table should have the following headers")
+    public void table_should_have_the_following_headers(List<String> expectedHeaders) {
+        System.out.println("Expected data");
+        System.out.println("expectedHeaders.size() = " + expectedHeaders.size());
+        for (String expectedheader : expectedHeaders) {
+            System.out.println(expectedheader);
+        }
+        System.out.println("Actual data");
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        for (WebElement gridHeader : calendarEventsPage.gridHeaders) {
+            System.out.println(gridHeader.getText());
+
+        }
+        List<String> actualHeaders = new ArrayList<>();
+        for (WebElement gritHeader : calendarEventsPage.gridHeaders) {
+            if (!gritHeader.getText().isEmpty()) {
+                actualHeaders.add(gritHeader.getText());
+
+            }
+        }
+
+        System.out.println(actualHeaders);
+
+        Assert.assertEquals(expectedHeaders, actualHeaders);
     }
 
 }
