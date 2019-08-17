@@ -11,23 +11,23 @@ import java.util.List;
 public class CalendarEventsStepDefs {
     @When("I click on the View per page dropdown")
     public void i_click_on_the_View_per_page_dropdown() {
-        // Write code here that turns the phrase above into concrete actions
-        CalendarEventsPage calendareventspage = new CalendarEventsPage();
-        calendareventspage.waitForUIOverlay();
-        calendareventspage.viewPerPageDropDown.click();
-
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitForUIOverlay();
+        calendarEventsPage.viewPerPageDropDown.click();
     }
+
     @Then("follow view per page options should be visible")
-    public void follow_view_per_page_options_should_be_visible(List<String> exceptedOptions) {
-        System.out.println(exceptedOptions.size());
-        for(String expectedoption:exceptedOptions ){
-            System.out.println(expectedoption);
+    public void follow_view_per_page_options_should_be_visible(List<String> expectedOptions) {
+        // Expected data coming from feature file as a list of strings
+        System.out.println(expectedOptions.size());
+        for (String expectedOption : expectedOptions) {
+            System.out.println(expectedOption);
         }
-        CalendarEventsPage calendareventpage = new CalendarEventsPage();
-        List<String> actualOptions = BrowserUtils.getElementsText(calendareventpage.viewPerPageOptions);
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
-        Assert.assertEquals(exceptedOptions, actualOptions);
-
+        // getting actual from UI
+        List<String> actualOptions = BrowserUtils.getElementsText(calendarEventsPage.viewPerPageOptions);
+        Assert.assertEquals(expectedOptions, actualOptions);
     }
 
 }
