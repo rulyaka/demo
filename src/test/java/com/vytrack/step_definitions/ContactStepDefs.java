@@ -36,5 +36,27 @@ public class ContactStepDefs {
         new LoginPage().login(username, password);
     }
 
+    @Then("contact creation details should display correctly")
+    public void contact_creation_details_should_display_correctly(Map<String, String> userInfo) {
+        System.out.println(userInfo);
+
+        String expectedCreateDate = userInfo.get("Created At");
+        String expectedOwner = userInfo.get("Owner");
+        System.out.println("expectedCreateDate = " + expectedCreateDate);
+        System.out.println("expectedOwner = " + expectedOwner);
+
+        ViewContactPage viewContactPage = new ViewContactPage();
+        String actualCreateDate = viewContactPage.createdAt.getText();
+        String actualOwner = viewContactPage.owner.getText();
+
+        System.out.println("actualCreateDate = " + actualCreateDate);
+        System.out.println("actualOwner = " + actualOwner);
+
+        Assert.assertTrue(actualCreateDate.contains(expectedCreateDate));
+        Assert.assertEquals(expectedOwner, actualOwner);
+
+    }
+
+
 
 }
