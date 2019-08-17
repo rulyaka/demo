@@ -40,6 +40,7 @@ public class LogoutStepDefs {
 
     @Then("the page title should be {string}")
     public void the_page_title_should_be(String expectedTitle) {
+        // TODO change to explicit wait
         String actual = Driver.get().getTitle();
         Assert.assertEquals(expectedTitle, actual);
     }

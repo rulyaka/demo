@@ -10,7 +10,6 @@ Feature: Calendar events page options
       | 50  |
       | 100 |
 
-  @wip
   Scenario: Activities table headers
     Given I login as a "sales manager"
     When I navigate to "Activities" "Calendar Events"
@@ -26,3 +25,6 @@ Feature: Calendar events page options
     ##########
 #    Then contacts table should have the following contacts
 #    |Mariam |	Brackstone |	mbrackstone9@example.com|
+
+#    CODE PUSHED
+#    BREAK 1.50
