@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
                     "json:target/cucumber.json"},
         features = "src/test/resources/com/vytrack/features/",
         glue = "com/vytrack/step_definitions",
-        tags = "@smoke",
-        dryRun = true
+        tags = "@wip",
+        dryRun = false
 )
 public class CukesRunner {
 }
