@@ -34,6 +34,7 @@ public class CalendarEventsStepDefs {
 
     @Then("table should have the following headers")
     public void table_should_have_the_following_headers(List<String> expectedHeaders) {
+<<<<<<< HEAD
         System.out.println("Expected data");
         System.out.println("expectedHeaders.size() = " + expectedHeaders.size());
         for (String expectedheader : expectedHeaders) {
@@ -43,6 +44,38 @@ public class CalendarEventsStepDefs {
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
         for (WebElement gridHeader : calendarEventsPage.gridHeaders) {
             System.out.println(gridHeader.getText());
+=======
+        System.out.println("*****EXPECTED DATA");
+        System.out.println("expectedHeaders.size() = " + expectedHeaders.size());
+        for (String expectedHeader : expectedHeaders) {
+            System.out.println(expectedHeader);
+        }
+
+        System.out.println("*****ACTUAL DATA");
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        for (WebElement gridHeader : calendarEventsPage.gridHeaders) {
+            System.out.println(gridHeader.getText());
+        }
+        System.out.println("*****ACTUAL DATA after clean up");
+
+        List<String> actualHeaders = new ArrayList<>();
+        for (WebElement gridHeader : calendarEventsPage.gridHeaders) {
+            if (!gridHeader.getText().isEmpty()) {
+                actualHeaders.add(gridHeader.getText());
+            }
+        }
+
+        System.out.println(actualHeaders);
+
+        Assert.assertEquals(expectedHeaders, actualHeaders);
+
+    }
+
+}
+
+
+
+>>>>>>> 8d4e7a80e02694da9d056790bf1e3ee9374f594c
 
         }
         List<String> actualHeaders = new ArrayList<>();
